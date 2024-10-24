@@ -1,14 +1,14 @@
 # Metal Music Analysis
 
-### Index
-1. [Data Cleaning](#data-cleaning)
-
 I love metal music and I wanted to learn some more about how certain genres, years, and artists perform.
 
 [Dataset Used](https://www.kaggle.com/datasets/patkle/metal-music-ratings-and-review-counts-from-amazon/data)
 
 
 [Cleaned Data](data/cleaned_data/all-metal-music-cleaned.csv)
+
+### Index
+1. [Data Cleaning](#data-cleaning)
 
 # Process
 
