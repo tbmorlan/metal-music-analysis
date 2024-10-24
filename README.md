@@ -15,6 +15,8 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 
 ## Data Cleaning
 
+*There was a significant number of rows with insufficient data. Whether this be null values, or incompatible data types in certain columns due to (probable) issues with the web scraper used to collect the data.*
+
 1. Add genre column to each dataset.
     - "thrash_and_speed_metal.csv" was shortened to thrash metal due to the terms being used interchangeably.
 2. Append datasets with short [python script](working_files/append_csv.py).
