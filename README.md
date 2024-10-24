@@ -5,7 +5,7 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 [Dataset Used](https://www.kaggle.com/datasets/patkle/metal-music-ratings-and-review-counts-from-amazon/data)
 
 
-[Cleaned Data](data/cleaned_data/metal-music-cleaned.csv)
+[Cleaned Data](data/cleaned_data/all-metal-music-cleaned.csv)
 
 # Process
 
@@ -33,10 +33,7 @@ combined_data = pd.concat([
 # save to new csv
 output = 'metal-music.csv'
 combined_data.to_csv(output, index=False)
-
-
 ```
-
 3. Remove random data in columns that shouldn't be there (char in numeric columns)
 4. Remove all null values (cannot perform analysis with null due to every value in table needed)
 5. Separate files by genre again (appended initially to make cleaning easier)
