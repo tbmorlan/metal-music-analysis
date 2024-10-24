@@ -1,7 +1,6 @@
 # Metal Music Analysis
 
-## Index
-### Process
+### Index
 1. [Data Cleaning](#data-cleaning)
 
 I love metal music and I wanted to learn some more about how certain genres, years, and artists perform.
