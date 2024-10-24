@@ -5,3 +5,4 @@
 - Append datasets with short python script
 - Remove random data in columns that shouldn't be there (char in numeric columns)
 - Remove all null values (cannot perform analysis with null due to every value in table needed)
+- Separate files by genre again (appended initially to make cleaning easier)
