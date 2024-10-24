@@ -9,6 +9,7 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 
 ### Index
 1. [Data Cleaning](#data-cleaning)
+2. [Black Metal Reviews Analysis](#black-metal-reviews-analysis)
 
 # Process
 
@@ -42,3 +43,5 @@ combined_data.to_csv(output, index=False)
     - Cannot perform analysis with null due to every value in table needed.
 5. Separate files by genre again (appended initially to make cleaning easier).
 6. Final product of clean data found in [cleaned_data](data/cleaned_data/)
+
+## Black Metal Reviews Analysis
