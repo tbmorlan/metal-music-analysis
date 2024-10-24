@@ -1,7 +1,6 @@
 # Metal Music Analysis
 
 ## Index
-
 ### Process
 1. [Data Cleaning](#data-cleaning)
 
