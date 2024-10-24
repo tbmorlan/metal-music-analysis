@@ -2,7 +2,7 @@
 
 I love metal music and I wanted to learn some more about how certain genres, years, and artists perform.
 
-[Dataset Used](https://www.kaggle.com/datasets/patkle/metal-music-ratings-and-review-counts-from-amazon/data)
+[Dataset Used: Metal Music ratings and review counts from Amazon](https://www.kaggle.com/datasets/patkle/metal-music-ratings-and-review-counts-from-amazon/data)
 
 
 [Cleaned Data](data/cleaned_data/all-metal-music-cleaned.csv)
@@ -45,3 +45,8 @@ combined_data.to_csv(output, index=False)
 6. Final product of clean data found in [cleaned_data](data/cleaned_data/)
 
 ## Black Metal Reviews Analysis
+
+**Goal:**
+*Query and visualize information about black metal reviews to see which artists and albums performed the best.*
+
+*Also, check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.*
