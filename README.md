@@ -14,7 +14,9 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 1. Add genre column to each dataset
     - "thrash_and_speed_metal.csv" was shortened to thrash metal due to the terms being used interchangeably
 2. Append datasets with short [python script](working_files/append_csv.py)
-```import pandas as pd
+
+```
+import pandas as pd
 import os
 
 # set path
@@ -28,7 +30,8 @@ combined_data = pd.concat([pd.read_csv(os.path.join(csv_folder, file)) for file 
 
 # save to new csv
 output = 'metal-music.csv'
-combined_data.to_csv(output, index=False)```
+combined_data.to_csv(output, index=False)
+```
 
 3. Remove random data in columns that shouldn't be there (char in numeric columns)
 4. Remove all null values (cannot perform analysis with null due to every value in table needed)
