@@ -10,6 +10,7 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 # Process
 
 ## Data Cleaning
+
 1. Add genre column to each dataset
     - "thrash_and_speed_metal.csv" was shortened to thrash metal due to the terms being used interchangeably
 2. Append datasets with short [python script](working_files/append_csv.py)
