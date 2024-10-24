@@ -46,7 +46,8 @@ combined_data.to_csv(output, index=False)
 
 ## Black Metal Reviews Analysis
 
-**Goal:**
+**Goal(s):**
+
 *Query and visualize information about black metal reviews to see which artists and albums performed the best.*
 
 *Also, check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.*
