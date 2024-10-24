@@ -1,5 +1,7 @@
 -- @block
 
+
+-- get an average of the ratings where there are more then 50 reviews (for analysis integrity to prevent a potential skew)
 SELECT
     artist,
     title,

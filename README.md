@@ -11,7 +11,7 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 1. [Data Cleaning](#data-cleaning)
 2. [Black Metal Reviews Analysis](#black-metal-reviews-analysis)
 
-# Process
+# Processes & Analyses
 
 ## Data Cleaning
 
@@ -52,4 +52,20 @@ combined_data.to_csv(output, index=False)
 
 *Query and visualize information about black metal reviews to see which artists and albums performed the best.*
 
-*Also, check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.*
+*Check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.*
+
+*Check to see if reviews were higher if physical media was purchased compared to MP3 files.*
+
+1. Write query to get an average of the ratings where there are more then 50 reviews. 
+    - Limited to more than 50 reviews for analysis integrity to prevent a potential skew.
+```
+SELECT
+    artist,
+    title,
+    review_count,
+    ROUND(AVG(star_rating), 1) AS average_rating
+FROM black_metal_music
+WHERE review_count > 50
+GROUP BY artist, title, review_count
+ORDER BY average_rating DESC;
+```
