@@ -8,7 +8,9 @@ csv_folder = 'working_data'
 csv_files = [f for f in os.listdir(csv_folder) if f.endswith('.csv')]
 
 # read and combine data
-combined_data = pd.concat([pd.read_csv(os.path.join(csv_folder, file)) for file in csv_files], ignore_index=True)
+combined_data = pd.concat([
+    pd.read_csv(os.path.join(csv_folder, file)) 
+    for file in csv_files], ignore_index=True)
 
 # save to new csv
 output = 'metal-music.csv'

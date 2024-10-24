@@ -26,11 +26,15 @@ csv_folder = 'working_data'
 csv_files = [f for f in os.listdir(csv_folder) if f.endswith('.csv')]
 
 # read and combine data
-combined_data = pd.concat([pd.read_csv(os.path.join(csv_folder, file)) for file in csv_files], ignore_index=True)
+combined_data = pd.concat([
+    pd.read_csv(os.path.join(csv_folder, file)) 
+    for file in csv_files], ignore_index=True)
 
 # save to new csv
 output = 'metal-music.csv'
 combined_data.to_csv(output, index=False)
+
+
 ```
 
 3. Remove random data in columns that shouldn't be there (char in numeric columns)
