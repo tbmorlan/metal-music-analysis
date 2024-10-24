@@ -39,3 +39,15 @@ WHERE artist IS NOT NULL
   AND title IS NOT NULL
   AND year IS NOT NULL
   AND genre IS NOT NULL;
+
+-- @block
+-- recreate table with clean data
+
+-- remove data from table
+TRUNCATE TABLE metal_music;
+
+-- add new clean data
+COPY metal_music (artist, asin, media, review_count, star_rating, title, year, genre)
+FROM 'C:\repositories\metal-music-analysis\data\cleaned_data\metal-music-cleaned.csv'
+DELIMITER ','
+CSV HEADER;
