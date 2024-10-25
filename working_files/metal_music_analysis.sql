@@ -16,6 +16,8 @@ WHERE review_count > 50
 GROUP BY artist;
 
 -- @block
+
+-- separate cte to query the average stars for every album released by artist
 WITH average_ratings AS (
     SELECT
         artist,
@@ -25,6 +27,7 @@ WITH average_ratings AS (
     GROUP BY artist
 )
 
+-- join average_ratings and get basic information provided by dataset
 SELECT
     b.artist,
     b.title,
