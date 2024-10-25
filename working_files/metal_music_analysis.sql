@@ -28,7 +28,6 @@ WITH average_ratings AS (
 SELECT
     b.artist,
     b.title,
-    b.year,
     b.media,
     b.review_count,
     b.star_rating,

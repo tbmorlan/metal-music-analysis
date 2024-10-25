@@ -59,10 +59,25 @@ combined_data.to_csv(output, index=False)
 1. Write query to get the average ratings per artist where there are more then 50 reviews. 
     - Limited to more than 50 reviews for analysis integrity to prevent a potential skew.
 ```
+WITH average_ratings AS (
+    SELECT
+        artist,
+        ROUND(AVG(star_rating), 1) AS average_stars
+    FROM black_metal_music
+    WHERE review_count > 50
+    GROUP BY artist
+)
+
 SELECT
-    artist,
-    ROUND(AVG(star_rating), 1) AS average_stars
-FROM black_metal_music
+    b.artist,
+    b.title,
+    b.media,
+    b.review_count,
+    b.star_rating,
+    a.average_stars
+FROM average_ratings AS a
+INNER JOIN black_metal_music AS b
+    ON a.artist = b.artist
 WHERE review_count > 50
-GROUP BY artist
+ORDER BY b.artist;
 ```
