@@ -52,20 +52,17 @@ combined_data.to_csv(output, index=False)
 
 *Query and visualize information about black metal reviews to see which artists and albums performed the best.*
 
-*Check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.*
+*~~Check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.~~* **Not possible due to dates not being accurate in dataset. The 'year' is potentially the year they were added to Amazon?**
 
 *Check to see if reviews were higher if physical media was purchased compared to MP3 files.*
 
-1. Write query to get an average of the ratings where there are more then 50 reviews. 
+1. Write query to get the average ratings per artist where there are more then 50 reviews. 
     - Limited to more than 50 reviews for analysis integrity to prevent a potential skew.
 ```
 SELECT
     artist,
-    title,
-    review_count,
-    ROUND(AVG(star_rating), 1) AS average_rating
+    ROUND(AVG(star_rating), 1) AS average_stars
 FROM black_metal_music
 WHERE review_count > 50
-GROUP BY artist, title, review_count
-ORDER BY average_rating DESC;
+GROUP BY artist
 ```
