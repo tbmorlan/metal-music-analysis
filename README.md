@@ -82,6 +82,4 @@ INNER JOIN black_metal_music AS b
     ON a.artist = b.artist
 WHERE review_count > 50
 ORDER BY b.artist;
-
-
 ```
