@@ -88,3 +88,5 @@ ORDER BY b.artist;
     - Graphs that showcase each band and their albums' performance. This was achieved with a simple column and stacked area chart.
         - The stacked area chart allows the user to adjust the range of values starting at 4.0 and ending at 5.0. This can further improve the user's experience when interacting with the dashboard.
     - Total count of reviews that automatically updates when a user filters the data with a respective slicer.
+    
+![Dashboard](analysis/img/dashboards/metal_music_analysis_dashboard.png)
