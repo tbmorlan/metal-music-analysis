@@ -86,9 +86,31 @@ WHERE review_count > 50
 ORDER BY b.artist;
 ```
 2. Create a simple [dashboard](working_files/working_data/black_metal_reviews_analysis/black_metal_reviews_analysis.pbix) with the following features:
-    - Slicers to allow the user to filter the data by band, album titles, and a range of review stars.
+    - Slicers to allow the user to filter the data by band, album titles, range of review stars, and the count of reviews.
     - Graphs that showcase each band and their albums' performance. This was achieved with a simple column and stacked area chart.
         - The stacked area chart allows the user to adjust the range of values starting at 4.0 and ending at 5.0. This can further improve the user's experience when interacting with the dashboard.
     - Total count of reviews that automatically updates when a user filters the data with a respective slicer.
     
 ![Dashboard](analysis/img/dashboards/black_metal_music_analysis_dashboard.png)
+
+**To apply this dashboard, thinking of a scenario where it would be useful is essential.**
+
+*Example scenario:*
+
+Suppose I am an event planner and I am figuring out which bands I want to be at our concert. To do this, I can use the slicers in parallel with certain variables that would drive outreach, turnout, and overall performance of the event. To start off, a concert planner may want to look at reviews. The higher a band's average album reviews are, the higher quality the conert may be. However, one cannot blindly assume this is the only variable that matters. Keep in mind, this dashboard was created with a query that only showed the albums with a review count over 50. The lower the review count is, the easier it is for a rating to be unreliable. This was the mindset behind adding the review count slicer. 
+
+Now back to the scenario. A concert planner can find reliable results by filtering the data using the slicers to determine high-rated bands with a large number of reviews on their albums. The more reviews, the more listeners. The more listeners, the more people that would potentially attend the live music event. 
+
+Let's say the event planner wants to see all the bands that have albums with at least 500 reviews. This filters it down quite nicely and gives us a good list of bands that we can choose from.
+
+![Filtered Dashboard](analysis/img/dashboards/black_metal_music_analysis_dashboard_filtered_1.png)
+
+However, there may be a potential issue. What if the event is only running for one day? And what if during that one day, there are only a few hours for the bands to perform? With that in mind, the concert planner could further filter the results by reviews. After checking the column charts for the highest-rated albums, the event planner can use the slicer to get a smaller list of bands that they could consider. 
+
+The result of this filter gives us three bands with over 500 reviews and their albums with an average of 4.8 stars. This looks like it would be a pretty good concert that would draw a good number of people! With a bit of background knowledge, one would easily know that the bands listed are very large in the metal community. 
+
+![Filtered Dashboard](analysis/img/dashboards/black_metal_music_analysis_dashboard_filtered_2.png)
+
+*Conclusion:*
+
+With this dashboard, an event manager could easily figure out which bands in a specific genre would be the best to consider when planning. Filtering by certain variables streamlines the process and allows professionals make decisions based on the data, instead of guessing or using subjective reasoning. On top of all this, if a band did not want to perform, or no longer performs, the event manager could easily broaden the filter and get a new list that would still draw a large number of people to the event.
