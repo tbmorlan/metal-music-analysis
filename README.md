@@ -4,6 +4,8 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 
 [Dataset Used: Metal Music ratings and review counts from Amazon](https://www.kaggle.com/datasets/patkle/metal-music-ratings-and-review-counts-from-amazon/data)
 
+Database created using [PostgreSQL](https://www.postgresql.org/)
+
 
 [Cleaned Data](data/cleaned_data/all-metal-music-cleaned.csv)
 
@@ -19,7 +21,7 @@ I love metal music and I wanted to learn some more about how certain genres, yea
 
 1. Add genre column to each dataset.
     - "thrash_and_speed_metal.csv" was shortened to thrash metal due to the terms being used interchangeably.
-2. Append datasets with short [python script](working_files/append_csv.py).
+2. Append datasets with short [python script](working_files/append_csv.py). This was done to facilitate the cleaning process by removing cleaning step repetitions.
 
 ```
 import pandas as pd
@@ -40,7 +42,7 @@ combined_data = pd.concat([
 output = 'metal-music.csv'
 combined_data.to_csv(output, index=False)
 ```
-3. Remove random data in columns that shouldn't be there (char in numeric columns).
+3. Remove random data in columns that shouldn't be there (char in numeric columns). Likely a result of data scraper issues.
 4. Create temporary database and remove all null values [Completed using created_metal_music_database.sql](working_files/create_metal_music_database.sql)
     - Cannot perform analysis with null due to every value in table needed.
 5. Separate files by genre again (appended initially to make cleaning easier).
@@ -89,4 +91,4 @@ ORDER BY b.artist;
         - The stacked area chart allows the user to adjust the range of values starting at 4.0 and ending at 5.0. This can further improve the user's experience when interacting with the dashboard.
     - Total count of reviews that automatically updates when a user filters the data with a respective slicer.
     
-![Dashboard](analysis/img/dashboards/metal_music_analysis_dashboard.png)
+![Dashboard](analysis/img/dashboards/black_metal_music_analysis_dashboard.png)
