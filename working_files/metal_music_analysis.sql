@@ -25,6 +25,32 @@ WHERE review_count > 50
 ORDER BY b.artist;
 
 
+
+
+
+-- @block
+SELECT 
+* 
+FROM black_metal_music;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- @block
 -- create function to query all metal music from each dataset.
 -- if i wanted to, i could just upload the combined dataset with all genres

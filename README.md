@@ -12,6 +12,7 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 ### Index
 1. [Data Cleaning](#data-cleaning)
 2. [Black Metal Reviews Analysis](#black-metal-reviews-analysis)
+3. [Genre Comparison](#genre-comparison)
 
 # Processes & Analyses
 
@@ -54,7 +55,7 @@ combined_data.to_csv(output, index=False)
 
 *Query and visualize information about black metal reviews to see which artists and albums performed the best.*
 
-*~~Check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.~~* **Not possible due to dates not being accurate in dataset. The 'year' is potentially the year they were added to Amazon?**
+*~~Check to see if certain time periods performed better (i.e. if older black metal is more popular than newer black metal). This question is from my personal favoritism for older black metal music, so I'm curious to see if the reviews on Amazon support my mindset.~~* **Not possible due to dates not being accurate in dataset. The 'year' is potentially the year they were added to Amazon.**
 
 *Check to see if reviews were higher if physical media was purchased compared to MP3 files.*
 
