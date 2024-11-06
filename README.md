@@ -114,3 +114,19 @@ The result of this filter gives us three bands with over 500 reviews and their a
 *Conclusion:*
 
 With this dashboard, an event manager could easily figure out which bands in a specific genre would be the best to consider when planning. Filtering by certain variables streamlines the process and allows professionals make decisions based on the data, instead of guessing or using subjective reasoning. On top of all this, if a band did not want to perform, or no longer performs, the event manager could easily broaden the filter and get a new list that would still draw a large number of people to the event.
+
+## Genre Comparison
+
+*Assume a similar scenario of a festival planner, shown above in the black metal music analysis.*
+
+**Goal(s):**
+
+*Compare metal genres to one another.*
+
+*Review:*
+
+- Score
+- Number of Reviews:
+    - Used to determine popularity and potential festival profits.
+- Average stars per genre:
+    - Using a dataset with review counts above 50, and one including review counts below 50.
