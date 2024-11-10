@@ -16,7 +16,7 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 
 # Processes & Analyses
 <details>
-<summary>## Data Cleaning</summary>
+<summary>Data Cleaning</summary>
 
 *There was a significant number of rows with insufficient data. Whether this be null values, or incompatible data types in certain columns due to (probable) issues with the web scraper used to collect the data.*
 
@@ -51,8 +51,8 @@ combined_data.to_csv(output, index=False)
 
 </details>
 
-
-## Black Metal Reviews Analysis
+<details>
+<summary>Black Metal Reviews Analysis</summary>
 
 **Goal(s):**
 
@@ -118,8 +118,10 @@ The result of this filter gives us three bands with over 500 reviews and their a
 *Conclusion:*
 
 With this dashboard, an event manager could easily figure out which bands in a specific genre would be the best to consider when planning. Filtering by certain variables streamlines the process and allows professionals make decisions based on the data, instead of guessing or using subjective reasoning. On top of all this, if a band did not want to perform, or no longer performs, the event manager could easily broaden the filter and get a new list that would still draw a large number of people to the event.
+</details>
 
-## Genre Comparison
+<details>
+<summary>Genre Comparison</summary>
 
 *Assume a similar scenario of a festival planner, shown above in the black metal music analysis.*
 
@@ -134,3 +136,4 @@ With this dashboard, an event manager could easily figure out which bands in a s
     - Used to determine popularity and potential festival profits.
 - Average stars per genre:
     - Using a dataset with review counts above 50, and one including review counts below 50.
+<details>
