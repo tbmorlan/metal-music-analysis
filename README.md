@@ -43,7 +43,6 @@ combined_data.to_csv(output, index=False)
     - Cannot perform analysis with null due to every value in table needed.
 5. Separate files by genre again (appended initially to make cleaning easier).
 6. Final product of clean data found in [cleaned_data](data/cleaned_data/)
-
 </details>
 
 <details>
@@ -117,10 +116,9 @@ With this dashboard, an event manager could easily figure out which bands in a s
 
 <details>
 <summary><b>Genre Comparison</b></summary>
+**Goal(s):**
 
 *Assume a similar scenario of a festival planner, shown above in the black metal music analysis.*
-
-**Goal(s):**
 
 *Compare metal genres to one another.*
 
