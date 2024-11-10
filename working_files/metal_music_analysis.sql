@@ -42,6 +42,33 @@ FROM black_metal_music
 WHERE media NOT LIKE('%MP3 Music%')
     AND review_count > 50;
 
+-- @block
+
+-- get data where physical media is included
+
+SELECT 
+    artist,
+    title,
+    media,
+    review_count,
+    star_rating
+FROM black_metal_music
+WHERE media LIKE('%MP3 Music%')
+    AND review_count > 50;
+
+-- @block 
+
+SELECT
+    (SELECT ROUND(AVG(star_rating), 2) 
+FROM black_metal_music 
+WHERE media NOT LIKE '%MP3 Music%' 
+AND review_count > 50) AS physical_avg_stars,
+    
+    (SELECT ROUND(AVG(star_rating), 2) 
+FROM black_metal_music 
+WHERE review_count > 50) AS all_average_stars;
+
+
 
 
 

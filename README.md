@@ -1,6 +1,6 @@
 # Metal Music Analysis
 
-I love metal music and I wanted to learn some more about how certain genres, years, and artists perform.
+I love metal music and I wanted to learn some more about how certain genres, years, and artists perform. I used various queries and analytical skills to transform and gain insights from the data.
 
 [Dataset Used: Metal Music ratings and review counts from Amazon](https://www.kaggle.com/datasets/patkle/metal-music-ratings-and-review-counts-from-amazon/data)
 
