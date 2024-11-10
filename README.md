@@ -15,8 +15,8 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 3. [Genre Comparison](#genre-comparison)
 
 # Processes & Analyses
-
-## Data Cleaning
+<details>
+<summary>Data Cleaning</summary>
 
 *There was a significant number of rows with insufficient data. Whether this be null values, or incompatible data types in certain columns due to (probable) issues with the web scraper used to collect the data.*
 
@@ -48,6 +48,9 @@ combined_data.to_csv(output, index=False)
     - Cannot perform analysis with null due to every value in table needed.
 5. Separate files by genre again (appended initially to make cleaning easier).
 6. Final product of clean data found in [cleaned_data](data/cleaned_data/)
+
+</details>
+
 
 ## Black Metal Reviews Analysis
 

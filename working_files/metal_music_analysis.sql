@@ -24,14 +24,23 @@ INNER JOIN black_metal_music AS b
 WHERE review_count > 50
 ORDER BY b.artist;
 
-
-
-
-
 -- @block
+
+-- get the meaningful data from the table where there is no digital version offered
+-- the current media types are MP3 Music, Audio CD, Vinyl, Audio, and Cassette
+-- this query excludes rows that have MP3 Music in them, but keeps all else.
+-- note: there are a large number of rows that have physical copies offered AND digital
+-- this excludes those as well, the only results are those who are ONLY physical copies
+
 SELECT 
-* 
-FROM black_metal_music;
+    artist,
+    title,
+    media,
+    review_count,
+    star_rating
+FROM black_metal_music
+WHERE media NOT LIKE('%MP3 Music%')
+    AND review_count > 50;
 
 
 
