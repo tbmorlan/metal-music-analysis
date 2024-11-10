@@ -9,11 +9,6 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 
 [Cleaned Data](data/cleaned_data/all-metal-music-cleaned.csv)
 
-### Index
-1. [Data Cleaning](#data-cleaning)
-2. [Black Metal Reviews Analysis](#black-metal-reviews-analysis)
-3. [Genre Comparison](#genre-comparison)
-
 # Processes & Analyses
 <details>
 <summary><b>Data Cleaning</b></summary>
