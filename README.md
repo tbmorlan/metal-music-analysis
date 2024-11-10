@@ -16,7 +16,7 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 
 # Processes & Analyses
 <details>
-## <summary>Data Cleaning</summary>
+<summary>## Data Cleaning</summary>
 
 *There was a significant number of rows with insufficient data. Whether this be null values, or incompatible data types in certain columns due to (probable) issues with the web scraper used to collect the data.*
 
