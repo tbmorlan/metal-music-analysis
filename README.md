@@ -16,7 +16,7 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 
 # Processes & Analyses
 <details>
-<summary>Data Cleaning</summary>
+<summary><b>Data Cleaning</b></summary>
 
 *There was a significant number of rows with insufficient data. Whether this be null values, or incompatible data types in certain columns due to (probable) issues with the web scraper used to collect the data.*
 
@@ -52,7 +52,7 @@ combined_data.to_csv(output, index=False)
 </details>
 
 <details>
-<summary>Black Metal Reviews Analysis</summary>
+<summary><b>Black Metal Reviews Analysis</b></summary>
 
 **Goal(s):**
 
@@ -121,7 +121,7 @@ With this dashboard, an event manager could easily figure out which bands in a s
 </details>
 
 <details>
-<summary>Genre Comparison</summary>
+<summary><b>Genre Comparison</b></summary>
 
 *Assume a similar scenario of a festival planner, shown above in the black metal music analysis.*
 
