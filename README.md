@@ -10,6 +10,9 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 [Cleaned Data](data/cleaned_data/all-metal-music-cleaned.csv)
 
 # Processes & Analyses
+
+*Each bullet point is a drop-down*
+
 <details>
 <summary><b>Data Cleaning</b></summary>
 
@@ -116,6 +119,7 @@ With this dashboard, an event manager could easily figure out which bands in a s
 
 <details>
 <summary><b>Genre Comparison</b></summary>
+
 **Goal(s):**
 
 *Assume a similar scenario of a festival planner, shown above in the black metal music analysis.*
@@ -129,4 +133,4 @@ With this dashboard, an event manager could easily figure out which bands in a s
     - Used to determine popularity and potential festival profits.
 - Average stars per genre:
     - Using a dataset with review counts above 50, and one including review counts below 50.
-<details>
+</details>
