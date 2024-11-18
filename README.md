@@ -166,6 +166,7 @@ That's a ratio of approximately 16:20!
 <details>
 <summary>Exact Ratio</summary>
 1620756 / 100000 = 16.20756
+
 1997811 / 100000 = 19.97811
 </details>
 
