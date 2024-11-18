@@ -118,7 +118,7 @@ With this dashboard, an event manager could easily figure out which bands in a s
 </details>
 
 <details>
-<summary><b>Genre Comparison</b></summary>
+<summary><b>Genre & Band Analysis</b></summary>
 
 **Goal(s):**
 
@@ -126,11 +126,8 @@ With this dashboard, an event manager could easily figure out which bands in a s
 
 *Compare metal genres to one another.*
 
-*Review:*
+*Compare bands to one another.*
 
-- Score
-- Number of Reviews:
-    - Used to determine popularity and potential festival profits.
-- Average stars per genre:
-    - Using a dataset with review counts above 50, and one including review counts below 50.
+1. Create a simple graph using seaborn to display the popularity of each genre's review count.
+![Genre Comparison Graph](analysis/img/graphs/genre_comparison.png)
 </details>

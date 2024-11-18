@@ -70,7 +70,12 @@ WHERE review_count > 50) AS all_average_stars;
 
 
 
-
+-- @block
+SELECT
+    genre,
+    AVG(review_count)
+FROM get_all_metal_music()
+GROUP BY genre;
 
 
 
