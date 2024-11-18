@@ -161,6 +161,15 @@ This query will return the sum of all review counts for each genre, and then a s
 
 This is **all** of the genres' review counts added up compared to the sum of the review counts of pop metal **alone**.
 
+That's a ratio of approximately 16:20!
+
+<details>
+<summary>Exact Ratio</summary>
+1620756 / 100000 = 16.20756
+1997811 / 100000 = 19.97811
+</details>
+
+
 If you were a concert planner, which genre would you choose to drive the most revenue? While there could potentially be more factors to influence your choice, based on the numbers alone, pop metal is the clear winner and an almost must-pick.
 
 </details>
