@@ -129,5 +129,9 @@ With this dashboard, an event manager could easily figure out which bands in a s
 *Compare bands to one another.*
 
 1. Create a simple graph using seaborn to display the popularity of each genre's review count.
+
+Created in [band_and_genre_analysis.ipynb](working_files/python/band_and_genre_analysis.ipynb)
+
 ![Genre Comparison Graph](analysis/img/graphs/genre_comparison.png)
+
 </details>
