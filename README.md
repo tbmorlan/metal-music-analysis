@@ -161,10 +161,12 @@ This query will return the sum of all review counts for each genre, and then a s
 
 This is **all** of the genres' review counts added up compared to the sum of the review counts of pop metal **alone**.
 
-That's a ratio of approximately 16:20!
+That's a ratio of approximately 16 pop metal reviews for every 20 reviews for all the other genres combined!
 
 <details>
 <summary>Exact Ratio</summary>
+16:20
+
 1620756 / 100000 = 16.20756
 
 1997811 / 100000 = 19.97811
