@@ -134,4 +134,33 @@ Created in [band_and_genre_analysis.ipynb](working_files/python/band_and_genre_a
 
 ![Genre Comparison Graph](analysis/img/graphs/genre_comparison.png)
 
+While I did an analysis previously for black metal, my favorite genre, an event planner might not pick that genre if they were looking for a few bands to play. It's pretty easy to see what the fan favorites are. One thing to note, the "metal" genre column contains duplicates entries from other genres. This is due to it being an umbrella term, which every other genre falls into. However, even disregarding this, Pop Metal is still massive in comparison to the other genres.
+
+To put it into perspective, take a look at the results from this query:
+
+```
+WITH all_but_pop AS (
+    SELECT
+        SUM(review_count) AS all_but
+    FROM get_all_metal_music()
+    WHERE genre NOT LIKE 'pop%metal'
+)
+
+SELECT
+    genre,
+    SUM(review_count) AS individual_sum,
+    all_but_pop.all_but as sum_no_pop
+FROM get_all_metal_music(), all_but_pop
+GROUP BY genre, all_but_pop.all_but
+ORDER BY individual_sum DESC;
+```
+
+This query will return the sum of all review counts for each genre, and then a sum of all the genres excluding pop metal.
+
+![Pop Reviews Versus All Other Genres](analysis/img/query_results/pop_vs_all.png)
+
+This is **all** of the genres' review counts added up compared to the sum of the review counts of pop metal **alone**.
+
+If you were a concert planner, which genre would you choose to drive the most revenue? While there could potentially be more factors to influence your choice, based on the numbers alone, pop metal is the clear winner and an almost must-pick.
+
 </details>

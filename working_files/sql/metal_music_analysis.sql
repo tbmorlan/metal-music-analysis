@@ -71,11 +71,20 @@ WHERE review_count > 50) AS all_average_stars;
 
 
 -- @block
+WITH all_but_pop AS (
+    SELECT
+        SUM(review_count) AS all_but
+    FROM get_all_metal_music()
+    WHERE genre NOT LIKE 'pop%metal'
+)
+
 SELECT
     genre,
-    AVG(review_count)
-FROM get_all_metal_music()
-GROUP BY genre;
+    SUM(review_count) AS individual_sum,
+    all_but_pop.all_but as sum_no_pop
+FROM get_all_metal_music(), all_but_pop
+GROUP BY genre, all_but_pop.all_but
+ORDER BY individual_sum DESC;
 
 
 
