@@ -14,6 +14,70 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 *Each bullet point is a drop-down*
 
 <details>
+<summary><b>SQL Functions<b></summary>
+
+1. Create function to query all metal music from each dataset.
+    - This function was created to prevent the need to make repetitious joins, and/or also prevent the need to upload an aggregated version of the dataset as a new table, which reduces the potential database size by half.
+
+```
+CREATE OR REPLACE FUNCTION get_all_metal_music()
+RETURNS TABLE(
+    artist TEXT,
+    asin TEXT,
+    media TEXT,
+    review_count NUMERIC,
+    star_rating NUMERIC,
+    title TEXT,
+    year INTEGER,
+    genre TEXT
+) AS $$
+DECLARE
+    query TEXT := '';
+    tbl RECORD;
+    col RECORD;
+    where_clause TEXT;
+BEGIN
+    -- loop over tables with "_metal_music" in the name to get all data
+    -- this works because each metal genre has "_metal_music" as a suffix.
+    FOR tbl IN
+        SELECT 
+            table_name
+        FROM 
+            information_schema.tables
+        WHERE 
+            table_schema = 'metal_music' AND table_name LIKE '%_metal_music'
+    LOOP
+        where_clause := '';
+        
+            -- null rows were found in the original function, which added nearly double the amount of rows.
+            -- this was added after the fact to alleviate this issue.
+        FOR col IN
+            SELECT column_name
+            FROM information_schema.columns
+            WHERE table_name = tbl.table_name AND table_schema = 'metal_music'
+        LOOP
+            where_clause := where_clause || col.column_name || ' IS NOT NULL AND ';
+        END LOOP;
+
+        -- remove the last "AND"
+        where_clause := left(where_clause, length(where_clause) - 4);
+
+        -- construct the query for the current table
+        query := query || 'SELECT * FROM ' || quote_ident(tbl.table_name) || ' WHERE ' || where_clause || ' UNION ALL ';
+    END LOOP;
+
+    -- Remove the last "UNION ALL" to make the query valid
+    query := left(query, length(query) - 10);
+
+    -- Execute the final query
+    RETURN QUERY EXECUTE query;
+END;
+$$ LANGUAGE plpgsql;
+
+```
+</details>
+
+<details>
 <summary><b>Data Cleaning</b></summary>
 
 *There was a significant number of rows with insufficient data. Whether this be null values, or incompatible data types in certain columns due to (probable) issues with the web scraper used to collect the data.*
