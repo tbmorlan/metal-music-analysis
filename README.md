@@ -106,6 +106,7 @@ output = 'metal-music.csv'
 combined_data.to_csv(output, index=False)
 ```
 3. Remove random data in columns that shouldn't be there (char in numeric columns). Likely a result of data scraper issues.
+    - Carried out using Excel for the easy identification of data of types that did not fit the column(s).
 4. Create temporary database and remove all null values [Completed using created_metal_music_database.sql](working_files/create_metal_music_database.sql)
     - Cannot perform analysis with null due to every value in table needed.
 5. Separate files by genre again (appended initially to make cleaning easier).
