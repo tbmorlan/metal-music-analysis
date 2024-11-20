@@ -17,7 +17,7 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 <summary><b>SQL Functions<b></summary>
 
 1. Create function to query all metal music from each dataset.
-    - This function was created to prevent the need to make repetitious joins, and/or also prevent the need to upload an aggregated version of the dataset as a new table, which reduces the potential database size by half.
+    - This function was created to prevent the need to make repetitious unions, and/or also prevent the need to upload an aggregated version of the dataset as a new table, which reduces the potential database size by half.
 
 ```
 CREATE OR REPLACE FUNCTION get_all_metal_music()
