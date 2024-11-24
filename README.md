@@ -240,14 +240,95 @@ That's a ratio of approximately 16 pop metal reviews for every 20 reviews for al
 
 If you were a concert planner, which genre would you choose to drive the most revenue? While there could potentially be more factors to influence your choice, based on the numbers alone, pop metal is the clear winner and an almost must-pick.
 
-### Analyze Individual Artists and Discover More About the Dataset
+### Analyze Individual Bands and Discover More About the Dataset
 
 Continued from previous section in [band_and_genre_analysis.ipynb](working_files/python/band_and_genre_analysis.ipynb)
 
-First, I wanted to do a little bit of data exploration on the different artists, specifically how many rows each one showed up in.
+First, I wanted to do a little bit of data exploration on the different bands, specifically how many rows each one showed up in.
 
-To do this, I used the simple bit of code, `metal_df.artist.value_counts()` which returned the following:
+To do this, I used the simple bit of code:
+ ```
+ metal_df.artist.value_counts()
+ ```
 
-![Check Rows](analysis/img/python_returns/check_rows.png)
+![Check Rows](analysis/img/python_returns/band_and_genre_analysis/check_rows.png)
 
+Simply looking at these numbers, it's safe to assume that the top few, especially Motorhead, Iron Maiden, and Deep Purple are unusually high. Let's do a more thorough investigation.
+
+For this further investigation, I will choose Motorhead since it is the largest count that is not Various Artists. This is assuming Various Artists is a collaborative album, or some other form of media where one artist cannot be specified.
+
+The next processes are the following:
+1. Return the number of rows that Motorhead is found in.
+2. Print the number of rows with unique titles.
+3. Print the number of rows with duplicate titles, returning only the original value that is duplicated.
+4. Display the duplicated rows in a data frame, ordered by the title.
+
+```
+# get rows where artist is motorhead
+motorhead = metal_df[metal_df.artist =='Motörhead']
+print(motorhead.shape)
+
+# get unique titles
+unique_titles = motorhead.title.unique()
+print("Unique titles:", len(unique_titles))
+
+# get duplicated titles
+duplicate_titles = motorhead[motorhead.title.duplicated()]
+print("Duplicate titles:", len(duplicate_titles))
+
+# display duplicate entries, ordered by title
+duplicates = motorhead[motorhead.title.duplicated()]
+duplicates.sort_values(by=['title'])
+```
+
+![Check Unique and Duplicate Values](analysis/img/python_returns/band_and_genre_analysis/check_unique_and_duplicate.png)
+
+Simply looking at the above dataframe, we can see that "Ace Of Spades" has at least 5 rows. Let's print specifically that title and sort it by the year.
+
+```
+duplicates[duplicates['title'] == "Ace Of Spades"].sort_values(by=['year'])
+```
+
+![Ace of Spades Duplicates](analysis/img/python_returns/band_and_genre_analysis/ace_of_spades_duplicates.png)
+
+This gives us a look into the type of issues our dataset has. It includes re-releases of albums in different years, different genres, and with different media types.
+
+Let's also look a the titles that have duplicates to find patterns.
+
+```
+print(duplicates.title.unique())
+```
+
+![Show Duplicates](analysis/img/python_returns/band_and_genre_analysis/show_duplicates.png)
+
+Looking at this list, you can see that there are a lot of titles that you would know are not studio records, but instead are re-releases or live records.
+
+Let's see how many rows we can remove that have these kinds of titles.
+
+```
+# check if title contains the words indicating a secondary release, ignoring case to prevent inacurate data due to a poor title
+motorhead_non_albums = motorhead[motorhead.title.str.contains("live|best|collection|alternate|archive|single|edition", case=False)]
+print("Non-albums:", len(motorhead_non_albums))
+```
+
+**Returns:** 
+
+Non-albums: 69
+
+69 is a lot of extra entries that are in the dataset! Recall that there were 226 total rows, including duplicates. 
+
+Let's see how low we can get the entries down to once we factor in all of these unclean traits.
+
+```
+clean_titles_cnt = len(unique_titles) - len(motorhead_non_albums)
+print("Total unique albums, not including alternate versions:", clean_titles_cnt)
+```
+
+**Returns:**
+
+Total unique albums, not including alternate versions: 22
+
+From these processes, we can conclude that Motörhead has rougly 22 unique studio albums on Amazon. 
+
+With Motorhead cleaned, analysis on the review counts, average stars, and anything else can be much simpler with the irrelevant rows removed.
 </details>
