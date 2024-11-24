@@ -19,7 +19,7 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 1. Create function to query all metal music from each dataset.
     - This function was created to prevent the need to make repetitious unions, and/or also prevent the need to upload an aggregated version of the dataset as a new table, which reduces the potential database size by half.
 
-```
+```sql
 CREATE OR REPLACE FUNCTION get_all_metal_music()
 RETURNS TABLE(
     artist TEXT,
@@ -86,7 +86,7 @@ $$ LANGUAGE plpgsql;
     - "thrash_and_speed_metal.csv" was shortened to thrash metal due to the terms being used interchangeably.
 2. Append datasets with short [python script](working_files/append_csv.py). This was done to facilitate the cleaning process by removing cleaning step repetitions.
 
-```
+```py
 import pandas as pd
 import os
 
@@ -126,7 +126,7 @@ combined_data.to_csv(output, index=False)
 
 1. Write query to get the average ratings per artist where there are more then 50 reviews. 
     - Limited to more than 50 reviews for analysis integrity to prevent a potential skew.
-```
+```sql
 -- separate cte to query the average stars for every album released by artist
 WITH average_ratings AS (
     SELECT
@@ -203,7 +203,7 @@ While I did an analysis previously for black metal, my favorite genre, an event 
 
 To put it into perspective, take a look at the results from this query:
 
-```
+```sql
 WITH all_but_pop AS (
     SELECT
         SUM(review_count) AS all_but
@@ -247,7 +247,8 @@ Continued from previous section in [band_and_genre_analysis.ipynb](working_files
 First, I wanted to do a little bit of data exploration on the different bands, specifically how many rows each one showed up in.
 
 To do this, I used the simple bit of code:
- ```
+
+ ```py
  metal_df.artist.value_counts()
  ```
 
@@ -263,7 +264,7 @@ The next processes are the following:
 3. Print the number of rows with duplicate titles, returning only the original value that is duplicated.
 4. Display the duplicated rows in a data frame, ordered by the title.
 
-```
+```py
 # get rows where artist is motorhead
 motorhead = metal_df[metal_df.artist =='Motörhead']
 print(motorhead.shape)
@@ -285,7 +286,7 @@ duplicates.sort_values(by=['title'])
 
 Simply looking at the above dataframe, we can see that "Ace Of Spades" has at least 5 rows. Let's print specifically that title and sort it by the year.
 
-```
+```py
 duplicates[duplicates['title'] == "Ace Of Spades"].sort_values(by=['year'])
 ```
 
@@ -295,7 +296,7 @@ This gives us a look into the type of issues our dataset has. It includes re-rel
 
 Let's also look a the titles that have duplicates to find patterns.
 
-```
+```py
 print(duplicates.title.unique())
 ```
 
@@ -305,7 +306,7 @@ Looking at this list, you can see that there are a lot of titles that you would 
 
 Let's see how many rows we can remove that have these kinds of titles.
 
-```
+```py
 # check if title contains the words indicating a secondary release, ignoring case to prevent inacurate data due to a poor title
 motorhead_non_albums = motorhead[motorhead.title.str.contains("live|best|collection|alternate|archive|single|edition", case=False)]
 print("Non-albums:", len(motorhead_non_albums))
@@ -319,7 +320,7 @@ Non-albums: 69
 
 Let's see how low we can get the entries down to once we factor in all of these unclean traits.
 
-```
+```py
 clean_titles_cnt = len(unique_titles) - len(motorhead_non_albums)
 print("Total unique albums, not including alternate versions:", clean_titles_cnt)
 ```
