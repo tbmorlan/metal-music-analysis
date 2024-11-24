@@ -358,7 +358,7 @@ With Motorhead cleaned, analysis on the review counts, average stars, and anythi
 
 Using methods from the previous section, I can create a small Python file that will remove duplicates, and remove rows that are likely not studio albums.
 
-[get_studio_albums.py](working_files/python/get_studio_albums.py get_studio_albums.py) uses a very simple process:
+[get_studio_albums.py](working_files/python/get_studio_albums.py "get_studio_albums.py") uses a very simple process:
 
 ```py
 # remove duplicates
