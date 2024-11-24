@@ -240,4 +240,14 @@ That's a ratio of approximately 16 pop metal reviews for every 20 reviews for al
 
 If you were a concert planner, which genre would you choose to drive the most revenue? While there could potentially be more factors to influence your choice, based on the numbers alone, pop metal is the clear winner and an almost must-pick.
 
+### Analyze Individual Artists and Discover More About the Dataset
+
+Continued from previous section in [band_and_genre_analysis.ipynb](working_files/python/band_and_genre_analysis.ipynb)
+
+First, I wanted to do a little bit of data exploration on the different artists, specifically how many rows each one showed up in.
+
+To do this, I used the simple bit of code, `metal_df.artist.value_counts()` which returned the following:
+
+![Check Rows](analysis/img/python_returns/check_rows.png)
+
 </details>
