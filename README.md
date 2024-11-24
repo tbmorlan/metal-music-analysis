@@ -31,7 +31,7 @@ RETURNS TABLE(
     year INTEGER,
     genre TEXT
 ) AS $$
-DECLARE
+DECLARE -- initialize variables needed for function
     query TEXT := '';
     tbl RECORD;
     col RECORD;
@@ -193,7 +193,7 @@ With this dashboard, an event manager could easily figure out which bands in a s
 
 *Compare bands to one another.*
 
-### Create a simple graph using seaborn to display the popularity of each genre's review count.
+## Create a simple graph using seaborn to display the popularity of each genre's review count.
 
 Created in [band_and_genre_analysis.ipynb](working_files/python/band_and_genre_analysis.ipynb)
 
@@ -240,7 +240,7 @@ That's a ratio of approximately 16 pop metal reviews for every 20 reviews for al
 
 If you were a concert planner, which genre would you choose to drive the most revenue? While there could potentially be more factors to influence your choice, based on the numbers alone, pop metal is the clear winner and an almost must-pick.
 
-### Analyze Individual Bands and Discover More About the Dataset
+## Analyze Individual Bands and Discover More About the Dataset
 
 Continued from previous section in [band_and_genre_analysis.ipynb](working_files/python/band_and_genre_analysis.ipynb)
 
@@ -332,4 +332,8 @@ Total unique albums, not including alternate versions: 22
 From these processes, we can conclude that Motörhead has rougly 22 unique studio albums on Amazon. 
 
 With Motorhead cleaned, analysis on the review counts, average stars, and anything else can be much simpler with the irrelevant rows removed.
+</details>
+
+<details>
+<summary><b>Dashboards</b></summary>
 </details>
