@@ -9,6 +9,17 @@ Database created using [PostgreSQL](https://www.postgresql.org/)
 
 [Cleaned Data](data/cleaned_data/all-metal-music-cleaned.csv)
 
+Topics Covered:
+- Database creation using PostgreSQL
+- Data Cleaning
+- Data Wrangling
+- Data Mining
+- Data Modeling
+- Data Visualization
+- Data Analysis
+- Exploratory Data Analysis
+- Quantitative Analytics
+
 # Processes & Analyses
 
 *Each bullet point is a drop-down*
@@ -336,4 +347,34 @@ With Motorhead cleaned, analysis on the review counts, average stars, and anythi
 
 <details>
 <summary><b>Dashboards</b></summary>
+
+**Goal(s):**
+
+*Create meaningful dashboards to answer potentiall business problems.*
+
+*Create interactive dashboards, allowing a user to slice data and gain the insights they need.*
+
+## Getting the Data
+
+Using methods from the previous section, I can create a small Python file that will remove duplicates, and remove rows that are likely not studio albums.
+
+[get_studio_albums.py](working_files/python/get_studio_albums.py get_studio_albums.py) uses a very simple process:
+
+```py
+# remove duplicates
+metal_no_dupes = metal_df.drop_duplicates(subset=['title'])
+
+# remove keywords that indicate a re-release or live record
+metal_no_dupes_only_albums = metal_no_dupes[~metal_no_dupes.title.str.contains("live|best|collection|alternate|archive|single|edition", case=False)]
+
+# save file
+metal_no_dupes_only_albums.to_csv('studio_albums_only.csv', index=False)
+```
+
+This returns 16,760 rows. Keep in mind the original dataset is 27,611 rows. This shows that there are over 10,000 rows of data that potentially irrelevant. Also consider that the original, completely uncleaned (null rows, data using special characters, mismatched data types in rows, etc) dataset after appending was over 33,000 rows.
+
+Now that the dataset is cleaned, I can move on to Power BI and create dashboards.
+
+## Power BI Dashboard Creation
+
 </details>
