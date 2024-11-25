@@ -390,7 +390,7 @@ This dashboard showcases the top 10 bands per genre based on their album count. 
     - For example, look at alternative metal's size versus pop metal's size. Just looking at the axis for both.
     - However, I can see that the "Various Artists" artist is heavily skewing the graphs.
 
-![bands_with_most_albums_per_genre_filtered.png](analysis/img/dashboards/bands_with_most_albums_per_genre_filtered.png.png "Bands with most albums per genre, filtered")
+![bands_with_most_albums_per_genre_filtered.png](analysis/img/dashboards/bands_with_most_albums_per_genre_filtered.png "Bands with most albums per genre, filtered")
 
 After filtering "Various Artists" out, we get a much more accurate representation of the individual, specified artists.
 - Before Alternative Metal had the artist with the highest title count, but that has been taken by British Metal with the artist Deep Purple.
