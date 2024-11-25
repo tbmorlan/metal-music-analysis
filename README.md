@@ -380,6 +380,8 @@ Now that the dataset is cleaned, I can move on to Power BI and create dashboards
 
 ### Dashboard #1
 
+[bands_with_most_albums_per_genre.pbix](working_files/working_data/dashboards/bands_with_most_albums_per_genre.pbix "bands_with_most_albums_per_genre.pbix")
+
 ![bands_with_most_albums_per_genre.png](analysis/img/dashboards/bands_with_most_albums_per_genre.png "Bands with most albums per genre")
 
 This dashboard showcases the top 10 bands per genre based on their album count. It shows:
