@@ -377,4 +377,33 @@ Now that the dataset is cleaned, I can move on to Power BI and create dashboards
 
 ## Power BI Dashboard Creation
 
+
+### Dashboard #1
+
+![bands_with_most_albums_per_genre.png](analysis/img/dashboards/bands_with_most_albums_per_genre.png "Bands with most albums per genre")
+
+This dashboard showcases the top 10 bands per genre based on their album count. It shows:
+- Distribution of each band within each genre, showcasing the most popular.
+- Relative size of each genre.
+    - For example, look at alternative metal's size versus pop metal's size. Just looking at the axis for both.
+    - However, I can see that the "Various Artists" artist is heavily skewing the graphs.
+
+![bands_with_most_albums_per_genre_filtered.png](analysis/img/dashboards/bands_with_most_albums_per_genre_filtered.png.png "Bands with most albums per genre, filtered")
+
+After filtering "Various Artists" out, we get a much more accurate representation of the individual, specified artists.
+- Before Alternative Metal had the artist with the highest title count, but that has been taken by British Metal with the artist Deep Purple.
+- We can also see that the axis changed for all genres. Before, "Various Artists" was bringing the average up significantly, but now we can see it is much more accurate.
+
+There are some interesting things I would like to point out from these graphs.
+- In the British Metal graph, Iron Maiden is quite far behind Deep Purple, but in the All Genres graph, it pulls ahead.
+    - After a quick look into the numbers, Iron Maiden has 10 more albums than Deep Purple.
+- In the Thrash Metal graph, we can gain some insights about the genre itself. With Metallica being significantly higher than any other band, we can attribute it to a very long career.
+    - Generally, we can assume that most bands will release an album every couple years, this means that Metallica has been going for over 40 years! 
+        - (Technically, as of November 2024, they would be over 50 years, but my estimate is on the lower side, factoring in non-studio albums)
+- Additionally, we can see that there are other genres such as Black Metal and Pop Metal which have very similar counts for each band. 
+    - These can be attributed to two factors: 
+        - The popularity of the genre for Pop Metal, which would mean a similar situation to Metallica. Being successful will incentivize bands to create more albums, and with Pop Metal bands being very similar, we can expect many of them to be successful.
+        - The age of the genre for Black Metal. Black Metal is a relatively new genre of metal, so most bands have been around for a similar amount of time. Furthermore, with the genre containing more underground music, it is safe to assume even newer bands have a larger number of albums due to the albums requiring less production.
+- Some bands, such as Iron Maiden and Deep Purple have very high title counts. While they almost certainly do not have this number of albums, many of these titles could also be releases of singles. This drives the number up as we can see.
+
 </details>
